@@ -4,9 +4,11 @@ const port=8000;
 
 const expressLayouts=require('express-ejs-layouts');
 
-
+app.use(express.static('./assets'));
 // for using layouts
 app.use(expressLayouts);
+app.set('layout extractStyles',true);
+app.set('layout extractScripts',true);
 // Use Express Router
 app.use('/',require('./routes')); //by access index.js inside routers
 
