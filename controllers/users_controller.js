@@ -4,17 +4,21 @@
 // }
 
 // Import the model
-const User=require('../models/User');
+const User=require('../models/user');
 module.exports.profile=function(req,res)
 {
     // return res.end('<h1>Express set Up for social_enzymes </h1>');
     return res.render('user_profile',{
         title:"user Profile"
-    })
+    });
 }
 
 // render the sign up Page
 module.exports.signUp=function(req,res){
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_up',{
         title:"social_enzyme|Sign Up"
     })
@@ -22,6 +26,10 @@ module.exports.signUp=function(req,res){
 
 // render the sign in Page
 module.exports.signIn=function(req,res){
+    if(req.isAuthenticated())
+    {
+        return res.redirect('/users/profile');
+    }
     return res.render('user_sign_in',{
         title:"social_enzyme|Sign In"
     })
@@ -67,5 +75,10 @@ module.exports.create=function(req,res)
 
 // Sign In and create the session for User
 module.exports.createSession=function(req,res){
-    // 
+    return res.redirect('/');
+}
+
+module.exports.destroySession=function(req,res){
+    req.logout(); //provided by passport
+    return res.redirect('/');
 }

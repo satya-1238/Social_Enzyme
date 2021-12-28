@@ -1,13 +1,33 @@
 const express=require('express');
 
-const cookieParser=require('cookie-parser');
+const cookieParser=require('cookie-parser');// fire up the express   
 const app=express();
 const port=8000;
 
+//required library
 const expressLayouts=require('express-ejs-layouts');
+
 // use db
 const db=require('./config/mongoose');
 
+// use this for session-coookies
+const session =require('express-session');
+
+// required library
+const passport=require('passport');
+const passportLocal=require('./config/passport-local-strategy');
+
+const MongoStore= require('connect-mongo') ;//(session);
+
+// for Sass efficient css
+const sassMiddleware=require('node-sass-middleware');
+app.use(sassMiddleware({
+      src:'./assets/scss',
+      dest:'./assets/css',
+      debug:true,
+      outputStyle:'extended',
+      prefix:'/css'
+}));
 // reading through post request
 app.use(express.urlencoded());
 
@@ -15,20 +35,62 @@ app.use(express.urlencoded());
 // set up the cookie parser
 app.use(cookieParser());
 
+
+
 //set up the static files 
 app.use(express.static('./assets'));
+
+
+
+
 // for using layouts
 app.use(expressLayouts);
 // extract style and scripts from subpages into the layout
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
-// Use Express Router
-app.use('/',require('./routes')); //by access index.js inside routers
+
 
 //set up the view Engine;
 app.set('view engine','ejs');
 app.set('views','./views');
 
+// Mongo store is used to store the session cookie in the db
+// setUp session
+app.use(session({
+    name: 'social_enzyme',
+    // TODO change the secret before deployment in production mode
+    secret: 'blahsomething',
+    saveUninitialized: false,
+    resave: false,
+    cookie: {
+        maxAge: (1000 * 60 * 100)
+    },
+    store: MongoStore.create({
+        mongoUrl:'mongodb://localhost/social_enzyme_development',
+        autoRemove:'disabled'
+    },
+    // new MongoStore(
+    //     {
+    //         mongooseConnection: db,
+    //         autoRemove: 'disabled'
+        
+    //     },
+        function(err){
+            console.log(err ||  'connect-mongodb setup ok');
+        }
+    )
+    
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(passport.setAuthenticatedUser);
+
+// Use Express Router
+app.use('/',require('./routes')); //by access index.js inside routers
+
+// Listen the Server
 app.listen(port,function(err){
  if(err)
  {
