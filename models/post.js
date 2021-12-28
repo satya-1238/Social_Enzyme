@@ -6,10 +6,14 @@ const postSchema=new mongoose.Schema({
     },
     user:{
         type:mongoose.Schema.Types.ObjectId,
-        ref:'user'
+        ref:'User'
+    },
+    // inlcude array of id's of comments for fetching comments with paricular post fast
+    comments:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'comment'
         
-
-    }
+    }]
 },{
    timestamps:true
 });
