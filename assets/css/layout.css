@@ -1,6 +1,7 @@
 body {
   margin: 0px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background-color: #dbecec; }
 
 #layout-main {
   height: 100%; }

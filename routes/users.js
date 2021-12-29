@@ -6,7 +6,9 @@ console.log("User File");
 const usersController = require('../controllers/users_controller');
 
 // profile accesible when user is authenticated means signed in
-router.get('/profile', passport.checkAuthentication, usersController.profile);
+router.get('/profile/:id', passport.checkAuthentication, usersController.profile);
+// update route
+router.post('/update/:id', passport.checkAuthentication, usersController.update);
 
 router.get('/sign-up', usersController.signUp);
 router.get('/sign-in', usersController.signIn);

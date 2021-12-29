@@ -1,0 +1,15 @@
+#home-container{
+    display: flex;
+    #feed-posts{
+        width:70%;
+        padding: 10px;
+    }
+    #user-friends{
+        height: 100%;
+        width:30%;
+        padding: 10px;
+        
+        border:5px soid red;
+        // background-color: red;
+    }
+}

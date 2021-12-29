@@ -1,28 +1,41 @@
 
 <header id="body-header">
     <nav>
-        <ul class="nav-menu">
-            <li class="nav-items"><img src="/images/MDR.png" alt="can't open" id="logo"></li>
-            <li class="nav-items"><a href="/">Home</a></li>
-            <li class="nav-items"><a href="/users/profile">Profile</a></li>
-            <% if(locals.user){%>
-                <li class="nav-items">
-                    <a  href="/users/profile"><%=user.name %></a>
-                </li>
-                <li class="nav-items">
-                    <a href="/users/sign-out"><button id="sigout">SignOut</button></a>
-                </li>
-              <%}else{ %>
-                        <li class="nav-items">
+        <div class="navigation">
+            <ul class="nav-menu">
+                <li class="nav-items"><img src="/images/logo.png" alt="can't open" id="logo"></li>
+                <li class="nav-items home"><a href="/">Home</a></li>
+                <li class="nav-items"><a href="/users/profile">Profile</a></li>
+                <% if(locals.user){%>
+                    <li class="nav-items">
+                        <a  href="/users/profile"><%=user.email %></a>
+                    </li>
+                    <li class="nav-items ">
+                        <li>
+                            <a href="/users/sign-out"><button id="sigout">SignOut</button></a>
+                        </li>
+                        
+                    </li>
+                  <%}else{ %>
+                    <li class="nav-items">
+                        <li >
                             <a href="/users/sign-in"><button id="signin">SignIn</button></a>
                         </li>
-                        <li class="nav-items">
+                        <li>
                             <a href="/users/sign-Up"><button id="signup">SignUp</button></a>
                         </li>
-                  <% }%>
-        </ul>
+                    </li>
+                           
+                      <% }%>
+            </ul>   
+        </div>
     </nav>
+    <div class="header-down-container">
+        <p >
+            <span>Social_Enzyme</span>
+        </p>
 
+    </div>
+</header>
 
-   
-       
+        

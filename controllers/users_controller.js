@@ -7,12 +7,24 @@
 const User=require('../models/user');
 module.exports.profile=function(req,res)
 {
-    // return res.end('<h1>Express set Up for social_enzymes </h1>');
+    User.findById(req.params.id,function(err,user){
+         
     return res.render('user_profile',{
-        title:"user Profile"
+        title:"user Profile",
+        profile_user:user
+    })
     });
 }
-
+// Update the info your profile
+module.exports.update = function(req, res){
+    if(req.user.id == req.params.id){
+        User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unauthorized');
+    }
+}
 // render the sign up Page
 module.exports.signUp=function(req,res){
     if(req.isAuthenticated())

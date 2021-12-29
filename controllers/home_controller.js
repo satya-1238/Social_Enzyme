@@ -2,6 +2,7 @@
     const express = require('express');
     const router = express.Router();
     const Post = require('../models/post');
+    const User = require('../models/user');
 
     module.exports.home = function(req, res){
         // console.log(req.cookies);
@@ -24,9 +25,14 @@
             }
         })
         .exec(function(err, posts){
-            return res.render('home', {
-                title: "Social_Enzyme | Home",
-                posts:  posts
+            User.find({},function(err,users)
+            {
+                return res.render('home', {
+                    title: "Social_Enzyme | Home",
+                    posts:  posts,
+                    all_users:users
+            });
+           
             });
         })
     
