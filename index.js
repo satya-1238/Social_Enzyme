@@ -21,6 +21,8 @@ const MongoStore= require('connect-mongo') ;//(session);
 
 // for Sass efficient css
 const sassMiddleware=require('node-sass-middleware');
+const flash=require('connect-flash');
+const flashMware=require('./config/middleware');
 app.use(sassMiddleware({
       src:'./assets/scss',
       dest:'./assets/css',
@@ -87,6 +89,8 @@ app.use(passport.session());
 
 app.use(passport.setAuthenticatedUser);
 
+app.use(flash());
+app.use(flashMware.setFlash);
 // Use Express Router
 app.use('/',require('./routes')); //by access index.js inside routers
 

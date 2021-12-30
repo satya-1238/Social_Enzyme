@@ -4,7 +4,26 @@
     width: 70%;
     padding: 10px; }
   #home-container #user-friends {
+    margin-bottom: 10%;
     height: 100%;
     width: 30%;
-    padding: 10px;
-    border: 5px soid red; }
+    padding: 20px;
+    border-left: 1px solid lightgray; }
+    #home-container #user-friends a {
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: capitalize; }
+
+.post-form {
+  margin-left: 2.5rem; }
+  .post-form textarea {
+    width: 50%;
+    height: 100px;
+    border-radius: 0.2rem;
+    margin-bottom: 5px; }
+  .post-form input {
+    padding: 2px;
+    width: 30%;
+    height: 25px;
+    border-radius: 0.2rem; }

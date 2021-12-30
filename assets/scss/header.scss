@@ -1,12 +1,10 @@
 #body-header
 {
+    width: 100vw;
+    height: 20vh;
     
-    width:100vw;
-    height:60vh;
-   
 }
 .nav-items{
-    
     width:20rem;
 }
 .navigation{
@@ -60,25 +58,3 @@
     margin-right:0vw;
 }
 
-.header-down-container{
-    
-    height: 50vh;
-    width: 50vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    // background-color: rgb(246, 241, 246);
-    margin: auto;
-    margin-top: 0;
-    margin-bottom: 5rem;
-    padding: 2rem;
-
-    text-align: center;
-    font-size: 4rem;
-    font-family: sans-serif;
-    // border-radius: 100%;
-    text-shadow:0.3rem 0.3rem 0.3rem rgb(49, 21, 126);
-}
-// .text-center{
-//     text-align: center;
-// }

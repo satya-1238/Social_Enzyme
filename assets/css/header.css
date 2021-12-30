@@ -1,6 +1,6 @@
 #body-header {
   width: 100vw;
-  height: 60vh; }
+  height: 20vh; }
 
 .nav-items {
   width: 20rem; }
@@ -46,18 +46,3 @@
 
 #signin {
   margin-right: 0vw; }
-
-.header-down-container {
-  height: 50vh;
-  width: 50vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 0;
-  margin-bottom: 5rem;
-  padding: 2rem;
-  text-align: center;
-  font-size: 4rem;
-  font-family: sans-serif;
-  text-shadow: 0.3rem 0.3rem 0.3rem #31157e; }

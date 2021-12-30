@@ -1,0 +1,46 @@
+.text-center{
+    text-align: center;
+}
+.post-content{
+    // margin-bottom: 10px;
+    border-bottom: 2px solid rgb(37, 104, 192);
+    padding-bottom: 10px;
+}
+
+    form{
+        .content{
+            height: 30px;
+            text-align: center;
+            border-radius: 0.2rem;
+            font:0.2rem;
+            width: 30vw;
+        }
+        // flex-direction: column;
+        .submit{
+            width:25%;
+            height:30px;
+            border-radius: 0.2rem;
+            padding: 2px;
+            // font-size: 
+
+        }
+    }
+
+
+small{
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size:15px;
+}
+h4{
+    font-size: 2rem;
+}
+ul{
+    list-style:none;
+}
+.break-line{
+    background-color: white;
+    margin-top: 50px;
+    // border-bottom: 0.2rem solid black;
+    padding: 10px;
+}
