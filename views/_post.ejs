@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="/css/post.css">
-<li class="break-line">
+<li class="break-line" id="post-<%=post._id%>">
     <p class="post-content">
         <% if (locals.user && locals.user.id == post.user.id){ %>
         <small>
-            <a href="/posts/destroy/<%= post.id %>">X</a>
+            <a class="delete-post-btn" href="/posts/destroy/<%= post.id %>">X</a>
         </small>
         <% } %>
         <small>
