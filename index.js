@@ -41,8 +41,8 @@ app.use(cookieParser());
 
 //set up the static files 
 app.use(express.static('./assets'));
-
-
+// available uplaods part available
+app.use('/uploads',express.static(__dirname+'/uploads'));
 
 
 // for using layouts
