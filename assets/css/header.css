@@ -3,7 +3,9 @@
   height: 20vh; }
 
 .nav-items {
-  width: 20rem; }
+  width: 20rem;
+  display: flex;
+  justify-content: end; }
 
 .navigation {
   position: fixed;
@@ -14,8 +16,8 @@
   .navigation ul {
     display: flex;
     align-items: center;
-    list-style: none;
     justify-content: space-between;
+    list-style: none;
     margin-right: 1rem;
     margin-top: 0; }
     .navigation ul li {
@@ -44,5 +46,5 @@
   padding: 0;
   border-radius: 0.2rem; }
 
-#signin {
-  margin-right: 0vw; }
+#sign-in {
+  margin-left: 40%; }
