@@ -16,7 +16,11 @@ const session =require('express-session');
 // required library
 const passport=require('passport');
 const passportLocal=require('./config/passport-local-strategy');
+<<<<<<< HEAD
 const passportJWT=require('./config/passport-jwt-strategy');
+=======
+const passportGoogle=require('./config/passport-google-oauth2-strategy');
+>>>>>>> master
 
 const MongoStore= require('connect-mongo') ;//(session);
 
