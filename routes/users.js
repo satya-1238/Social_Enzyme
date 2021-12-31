@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
-console.log("User File");
+// console.log("User File");
 
 const usersController = require('../controllers/users_controller');
 
