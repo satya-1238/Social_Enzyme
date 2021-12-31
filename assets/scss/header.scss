@@ -2,10 +2,11 @@
 {
     width: 100vw;
     height: 20vh;
-    
 }
 .nav-items{
     width:20rem;
+    display: flex;
+    justify-content:end;
 }
 .navigation{
      position:fixed;
@@ -15,10 +16,9 @@
       margin:0;
     ul{
         display: flex;
-        // display: inline-block;
         align-items:center;
-        list-style:none;
         justify-content: space-between;
+        list-style:none;
         margin-right: 1rem;
         margin-top: 0;
         li{
@@ -33,6 +33,7 @@
                     border-radius: 1rem;
                     width: 5rem;
                     height: 2rem;
+                    // margin: 0;
                 }
                 button:hover{
                     color: whitesmoke;
@@ -54,7 +55,6 @@
     padding: 0;
     border-radius: 0.2rem;
 }
-#signin{
-    margin-right:0vw;
+#sign-in{
+    margin-left: 40%;
 }
-
